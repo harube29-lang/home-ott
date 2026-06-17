@@ -1,0 +1,102 @@
+/* ==========================================================
+   HOME-OTT 전역 스타일 / 디자인 토큰 (CSS 변수)
+   - 색상, 타이포, 스크롤바, 인터랙션(스크롤 애니메이션, 포커스)
+   ========================================================== */
+
+:root {
+  /* 컬러 시스템 */
+  --color-primary: #e50914;
+  --color-bg: #0f0f0f;
+  --color-surface: #181818;
+  --color-text: #ffffff;
+  --color-subtext: #b3b3b3;
+
+  /* 간격 시스템 (8px 기준) */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* 레이아웃 */
+  --header-height: 64px;
+  --radius-md: 8px;
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.35s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Noto Sans KR', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  scroll-behavior: smooth;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 키보드 접근성을 위한 명확한 포커스 상태 */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* 가로 스크롤 영역 스크롤바 커스텀 (Netflix 스타일) */
+.scroll-row {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-surface);
+}
+
+.scroll-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-row::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+.scroll-row::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: var(--radius-md);
+}
+
+/* Intersection Observer 기반 Scroll Fade-up 애니메이션
+   src/js/main.js 에서 'is-visible' 클래스를 토글한다 */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
