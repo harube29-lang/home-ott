@@ -10,7 +10,7 @@ const AboutPage = () => {
           서비스 소개
         </Typography>
         <Typography sx={{ color: 'var(--color-subtext)', mb: 2 }}>
-          HOME-OTT는 드라마, 영화, 예능, 애니, 시사교양, 해외 시리즈, LIVE 콘텐츠를 한곳에서 만날 수 있는
+          HOME-OTT는 드라마, 영화, 예능, 애니메이션, 다큐멘터리, 해외 시리즈, LIVE 콘텐츠를 한곳에서 만날 수 있는
           프리미엄 콘텐츠 소개 플랫폼입니다.
         </Typography>
         <Typography sx={{ color: 'var(--color-subtext)', mb: 2 }}>
