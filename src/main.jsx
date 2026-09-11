@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter basename="/home-ott/">
+      <BrowserRouter basename="/home-ott">
         <App />
       </BrowserRouter>
     </ThemeProvider>
