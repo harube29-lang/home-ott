@@ -2,6 +2,9 @@
 // 동일한 데이터를 Supabase contents/recommendations 테이블 시드 데이터로도 사용한다.
 // 실제로 잘 알려진 작품의 제목/장르/설명을 사용하되, 포스터 저작권 문제를 피하기 위해
 // 포스터 이미지는 Unsplash의 어둡고 시네마틱한 분위기의 고화질 사진으로 대체했다.
+// (오징어 게임만 예외적으로 실제 스틸컷을 사용 중 — 공개 배포 시 저작권 유의)
+
+import squidGamePhoto from '../assets/squid_game.jpg'
 
 const unsplash = (photoId) =>
   `https://images.unsplash.com/photo-${photoId}?auto=format&fit=crop&w=400&h=600&q=80`
@@ -12,7 +15,7 @@ export const sampleContents = [
     title: '오징어 게임',
     genre: '드라마',
     description: '456억 원의 상금을 걸고 벌어지는 목숨을 건 서바이벌 게임에 뛰어든 사람들의 이야기.',
-    poster_url: unsplash('1599508704512-2f19efd1e35f'),
+    poster_url: squidGamePhoto,
     release_date: '2021-09-17',
     rating: '19세 이상',
     runtime: '52분',
