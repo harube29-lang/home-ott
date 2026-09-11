@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 
-// Netflix 스타일 콘텐츠 카드: Hover 시 확대 + 그림자 + 상세정보(장르/설명) 표시
+// Netflix 스타일 콘텐츠 카드: 제목/장르/설명 항상 표시, Hover 시 확대 + 그림자
 const ContentCard = ({ content }) => {
   return (
     <Box
@@ -20,9 +20,6 @@ const ContentCard = ({ content }) => {
           boxShadow: '0 16px 32px rgba(0,0,0,0.6)',
           zIndex: 2,
         },
-        '&:hover .content-card-info, &:focus-visible .content-card-info': {
-          opacity: 1,
-        },
       }}
     >
       <Box
@@ -34,7 +31,6 @@ const ContentCard = ({ content }) => {
       />
 
       <Box
-        className="content-card-info"
         sx={{
           position: 'absolute',
           inset: 0,
@@ -42,8 +38,6 @@ const ContentCard = ({ content }) => {
           flexDirection: 'column',
           justifyContent: 'flex-end',
           p: 1.5,
-          opacity: 0,
-          transition: 'opacity var(--transition-fast)',
           background: 'linear-gradient(to top, rgba(0,0,0,0.92) 10%, rgba(0,0,0,0.2) 70%, transparent)',
         }}
       >
