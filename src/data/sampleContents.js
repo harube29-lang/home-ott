@@ -127,4 +127,10 @@ export const sampleRecommendations = [
   { id: 2, content_id: 5, reason: '평점이 높은 해외 시리즈를 찾고 있다면 추천해요' },
   { id: 3, content_id: 7, reason: '주말에 몰아보기 좋은 영화예요' },
   { id: 4, content_id: 9, reason: '드라마 장르를 즐겨 보는 분들에게 인기 있어요' },
+  { id: 5, content_id: 1, reason: '요즘 가장 화제가 되고 있는 시리즈예요' },
+  { id: 6, content_id: 3, reason: '가볍게 웃으며 볼 수 있는 예능이에요' },
+  { id: 7, content_id: 4, reason: '애니메이션 팬이라면 놓치지 마세요' },
+  { id: 8, content_id: 6, reason: '힐링이 필요할 때 보기 좋은 다큐멘터리예요' },
+  { id: 9, content_id: 8, reason: '요리 예능을 좋아하는 분들에게 추천해요' },
+  { id: 10, content_id: 10, reason: '실시간으로 즐기는 라이브 콘텐츠예요' },
 ]

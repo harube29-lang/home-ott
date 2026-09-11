@@ -7,7 +7,7 @@ const ContentSection = ({ contents }) => {
   return (
     <Box component="section" id="contents" className="fade-up" sx={{ px: { xs: 2, md: 4 }, py: { xs: 4, md: 6 } }}>
       <Typography variant="h2" component="h2" sx={{ mb: 3 }}>
-        주요 콘텐츠
+        넷플릭스 새로 올라온 콘텐츠
       </Typography>
 
       {contents.length === 0 ? (

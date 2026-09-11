@@ -4,8 +4,8 @@ import { initScrollSpy } from '../js/main.js'
 
 const SECTIONS = [
   { id: 'hero', label: 'Hero' },
-  { id: 'contents', label: '주요 콘텐츠' },
-  { id: 'featured', label: '상세 소개' },
+  { id: 'contents', label: '새로 올라온 콘텐츠' },
+  { id: 'featured', label: 'HOT 콘텐츠' },
   { id: 'recommend', label: '추천 콘텐츠' },
 ]
 
