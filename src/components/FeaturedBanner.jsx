@@ -46,7 +46,7 @@ const FeaturedBanner = ({ content }) => {
             {content.description}
           </Typography>
 
-          <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap' }}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
             <Chip label={content.genre} sx={{ bgcolor: 'var(--color-primary)', color: '#fff', fontWeight: 700 }} />
             <Chip
               label={`공개일 ${content.release_date}`}
@@ -63,7 +63,7 @@ const FeaturedBanner = ({ content }) => {
               variant="outlined"
               sx={{ color: 'var(--color-text)', borderColor: 'var(--color-subtext)' }}
             />
-          </Stack>
+          </Box>
 
           <Box>
             <Button
