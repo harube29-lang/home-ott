@@ -15,7 +15,12 @@ const Footer = () => {
       role="contentinfo"
       sx={{
         bgcolor: 'var(--color-bg)',
-        borderTop: '1px solid rgba(255,255,255,0.08)',
+        borderTop: '1px solid var(--color-border)',
+        backgroundImage:
+          'linear-gradient(90deg, transparent, var(--color-primary) 50%, transparent)',
+        backgroundSize: '100% 1px',
+        backgroundPosition: 'top',
+        backgroundRepeat: 'no-repeat',
         px: { xs: 2, md: 4 },
         py: 4,
         color: 'var(--color-subtext)',
@@ -24,8 +29,11 @@ const Footer = () => {
     >
       <Stack spacing={2} alignItems="center">
         <Box>
-          <Typography variant="body2" sx={{ color: 'var(--color-text)', fontWeight: 700, mb: 1 }}>
-            HOME-OTT
+          <Typography
+            variant="body2"
+            sx={{ fontFamily: 'var(--font-display)', color: 'var(--color-text)', fontWeight: 700, mb: 1 }}
+          >
+            HOME<Box component="span" sx={{ color: 'var(--color-primary)' }}>.</Box>
           </Typography>
           <Typography variant="caption" sx={{ display: 'block', maxWidth: 320, mx: 'auto' }}>
             HOME-OTT는 프리미엄 콘텐츠를 한곳에서 즐길 수 있는 OTT 소개 서비스입니다.

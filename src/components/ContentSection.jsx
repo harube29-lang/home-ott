@@ -6,8 +6,22 @@ import ContentCard from './ContentCard.jsx'
 const ContentSection = ({ contents }) => {
   return (
     <Box component="section" id="contents" className="fade-up" sx={{ px: { xs: 2, md: 4 }, py: { xs: 4, md: 6 } }}>
+      <Typography
+        variant="caption"
+        sx={{
+          display: 'block',
+          mb: 0.5,
+          color: 'var(--color-primary)',
+          fontFamily: 'var(--font-mono)',
+          fontWeight: 600,
+          letterSpacing: '0.12em',
+          textTransform: 'uppercase',
+        }}
+      >
+        New Arrivals
+      </Typography>
       <Typography variant="h2" component="h2" sx={{ mb: 3 }}>
-        넷플릭스 새로 올라온 콘텐츠
+        새로 올라온 콘텐츠
       </Typography>
 
       {contents.length === 0 ? (

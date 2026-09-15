@@ -6,9 +6,11 @@ import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
 import IconButton from '@mui/material/IconButton'
 import InputBase from '@mui/material/InputBase'
+import Typography from '@mui/material/Typography'
 import SearchIcon from '@mui/icons-material/Search'
 import CloseIcon from '@mui/icons-material/Close'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded'
 import { useOttFilter } from '../contexts/OttFilterContext.jsx'
 import { GENRES } from '../data/genres.js'
 
@@ -71,14 +73,35 @@ const Header = () => {
           component={Link}
           to="/"
           aria-label="HOME-OTT 홈으로 이동"
-          sx={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}
+          sx={{ display: 'flex', alignItems: 'center', gap: 1, flexShrink: 0 }}
         >
           <Box
-            component="img"
-            src={`${import.meta.env.BASE_URL}images/logo.png`}
-            alt="HOME-OTT 로고"
-            sx={{ height: 26, width: 'auto' }}
-          />
+            aria-hidden="true"
+            sx={{
+              width: 28,
+              height: 28,
+              borderRadius: '8px',
+              bgcolor: 'var(--color-primary)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
+            }}
+          >
+            <PlayArrowRoundedIcon sx={{ fontSize: 20, color: '#141013' }} />
+          </Box>
+          <Typography
+            sx={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 900,
+              fontSize: '1.2rem',
+              letterSpacing: '-0.01em',
+              color: 'var(--color-text)',
+              lineHeight: 1,
+            }}
+          >
+            HOME<Box component="span" sx={{ color: 'var(--color-primary)' }}>.</Box>
+          </Typography>
         </Box>
 
         <Stack
@@ -100,17 +123,19 @@ const Header = () => {
               onClick={() => handleGenreClick(g)}
               aria-current={genre === g && location.pathname === '/' ? 'true' : undefined}
               sx={{
-                background: 'none',
-                border: 'none',
+                background: genre === g ? 'var(--color-primary-soft)' : 'none',
+                border: '1px solid',
+                borderColor: genre === g ? 'var(--color-primary)' : 'transparent',
+                borderRadius: '999px',
                 cursor: 'pointer',
                 whiteSpace: 'nowrap',
-                fontSize: '0.9rem',
-                fontWeight: genre === g ? 700 : 400,
-                color: genre === g ? 'var(--color-text)' : 'var(--color-subtext)',
-                borderBottom: genre === g ? '2px solid var(--color-primary)' : '2px solid transparent',
-                padding: '4px 2px',
-                transition: 'color var(--transition-fast)',
-                '&:hover': { color: 'var(--color-text)' },
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.85rem',
+                fontWeight: genre === g ? 700 : 500,
+                color: genre === g ? 'var(--color-primary)' : 'var(--color-subtext)',
+                padding: '5px 12px',
+                transition: 'color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast)',
+                '&:hover': { color: 'var(--color-text)', borderColor: 'var(--color-border)' },
               }}
             >
               {g}

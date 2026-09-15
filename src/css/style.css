@@ -4,12 +4,21 @@
    ========================================================== */
 
 :root {
-  /* 컬러 시스템 */
-  --color-primary: #e50914;
-  --color-bg: #0f0f0f;
-  --color-surface: #181818;
-  --color-text: #ffffff;
-  --color-subtext: #b3b3b3;
+  /* 컬러 시스템 — 앰버 골드 포인트의 프리미엄 시네마 톤 */
+  --color-primary: #e7a33e;
+  --color-primary-dark: #cf8f31;
+  --color-primary-soft: rgba(231, 163, 62, 0.14);
+  --color-bg: #0b0c10;
+  --color-surface: #15171d;
+  --color-surface-2: #1c1f27;
+  --color-text: #f3f1ea;
+  --color-subtext: #93909f;
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  /* 폰트 시스템 */
+  --font-display: 'Noto Serif KR', serif;
+  --font-body: 'Noto Sans KR', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Roboto Mono', monospace;
 
   /* 간격 시스템 (8px 기준) */
   --space-xs: 4px;
@@ -35,7 +44,7 @@ body {
   padding: 0;
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: 'Noto Sans KR', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: var(--font-body);
   scroll-behavior: smooth;
 }
 
@@ -61,7 +70,7 @@ button:focus-visible,
   outline-offset: 2px;
 }
 
-/* 가로 스크롤 영역 스크롤바 커스텀 (Netflix 스타일) */
+/* 가로 스크롤 영역 스크롤바 커스텀 */
 .scroll-row {
   scrollbar-width: thin;
   scrollbar-color: var(--color-primary) var(--color-surface);

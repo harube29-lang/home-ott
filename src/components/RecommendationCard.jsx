@@ -17,8 +17,9 @@ const RecommendationCard = ({ content, reason }) => {
         borderRadius: 'var(--radius-md)',
         overflow: 'hidden',
         bgcolor: 'var(--color-surface)',
-        transition: 'transform var(--transition-fast)',
-        '&:hover, &:focus-visible': { transform: 'translateY(-6px)' },
+        border: '1px solid var(--color-border)',
+        transition: 'transform var(--transition-fast), border-color var(--transition-fast)',
+        '&:hover, &:focus-visible': { transform: 'translateY(-6px)', borderColor: 'var(--color-primary)' },
       }}
     >
       <Box
@@ -29,10 +30,25 @@ const RecommendationCard = ({ content, reason }) => {
         sx={{ width: '100%', aspectRatio: '2 / 3', objectFit: 'cover' }}
       />
       <Box sx={{ p: 1.25 }}>
-        <Typography variant="body2" sx={{ fontWeight: 700 }} noWrap>
+        <Typography variant="body2" noWrap sx={{ fontFamily: 'var(--font-display)', fontWeight: 700 }}>
           {content.title}
         </Typography>
-        <Typography variant="caption" sx={{ color: 'var(--color-subtext)' }}>
+        <Typography
+          variant="caption"
+          sx={{ display: 'block', color: 'var(--color-primary)', fontFamily: 'var(--font-mono)', fontWeight: 600, mb: 0.5 }}
+        >
+          {content.genre}
+        </Typography>
+        <Typography
+          variant="caption"
+          sx={{
+            color: 'var(--color-subtext)',
+            display: '-webkit-box',
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+          }}
+        >
           {reason}
         </Typography>
       </Box>

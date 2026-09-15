@@ -3,6 +3,7 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack'
 import Button from '@mui/material/Button'
+import Chip from '@mui/material/Chip'
 import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
 import { toBackdropUrl } from '../utils/image.js'
@@ -38,7 +39,7 @@ const Hero = ({ content }) => {
           position: 'absolute',
           inset: 0,
           background:
-            'linear-gradient(to top, var(--color-bg) 5%, rgba(15,15,15,0.4) 45%, rgba(15,15,15,0.75) 100%)',
+            'linear-gradient(to top, var(--color-bg) 5%, rgba(11,12,16,0.45) 45%, rgba(11,12,16,0.78) 100%)',
         }}
       />
 
@@ -46,12 +47,58 @@ const Hero = ({ content }) => {
         className="fade-up"
         sx={{ position: 'relative', zIndex: 1, p: { xs: 3, md: 6 }, maxWidth: 680 }}
       >
-        <Typography variant="caption" sx={{ color: 'var(--color-primary)', fontWeight: 700 }}>
-          오늘의 대표 콘텐츠
+        <Typography
+          variant="caption"
+          sx={{
+            color: 'var(--color-primary)',
+            fontFamily: 'var(--font-mono)',
+            fontWeight: 600,
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+          }}
+        >
+          Pick of the Day
         </Typography>
-        <Typography variant="h1" component="h1" sx={{ mt: 1, mb: 2, fontSize: { xs: '2rem', md: '3rem' } }}>
+        <Typography
+          variant="h1"
+          component="h1"
+          sx={{ fontFamily: 'var(--font-display)', mt: 1, mb: 1.5, fontSize: { xs: '2.1rem', md: '3.2rem' } }}
+        >
           {content.title}
         </Typography>
+
+        <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap', mb: 2 }}>
+          {content.genre && (
+            <Chip
+              label={content.genre}
+              size="small"
+              sx={{
+                bgcolor: 'var(--color-primary-soft)',
+                color: 'var(--color-primary)',
+                fontWeight: 700,
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.72rem',
+              }}
+            />
+          )}
+          {content.rating && (
+            <Chip
+              label={content.rating}
+              size="small"
+              variant="outlined"
+              sx={{ borderColor: 'var(--color-border)', color: 'var(--color-subtext)', fontFamily: 'var(--font-mono)', fontSize: '0.72rem' }}
+            />
+          )}
+          {content.runtime && (
+            <Chip
+              label={content.runtime}
+              size="small"
+              variant="outlined"
+              sx={{ borderColor: 'var(--color-border)', color: 'var(--color-subtext)', fontFamily: 'var(--font-mono)', fontSize: '0.72rem' }}
+            />
+          )}
+        </Stack>
+
         <Typography variant="body1" sx={{ color: 'var(--color-subtext)', mb: 3, maxWidth: 560 }}>
           {content.description}
         </Typography>
@@ -61,7 +108,7 @@ const Hero = ({ content }) => {
             variant="contained"
             size="large"
             startIcon={<PlayArrowIcon />}
-            sx={{ bgcolor: 'var(--color-text)', color: '#000', '&:hover': { bgcolor: '#d9d9d9' } }}
+            sx={{ bgcolor: 'var(--color-primary)', color: '#141013', '&:hover': { bgcolor: 'var(--color-primary-dark)' } }}
           >
             지금 시청하기
           </Button>
